@@ -7,12 +7,76 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/reminderTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Select Time"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/amNumberPicker"
+        app:layout_constraintStart_toStartOf="@+id/hourNumberPicker"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/hourNumberPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminderTime" />
+
+    <NumberPicker
+        android:id="@+id/minNumberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/hourNumberPicker"
+        app:layout_constraintStart_toEndOf="@+id/hourNumberPicker"
+        app:layout_constraintTop_toTopOf="@+id/hourNumberPicker" />
+
+    <NumberPicker
+        android:id="@+id/amNumberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/minNumberPicker"
+        app:layout_constraintStart_toEndOf="@+id/minNumberPicker"
+        app:layout_constraintTop_toTopOf="@+id/minNumberPicker" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/hourNumberPicker"
+        app:layout_constraintStart_toEndOf="@+id/amNumberPicker"
+        app:layout_constraintTop_toTopOf="@+id/reminderTime" />
+
+    <TextView
+        android:id="@+id/okButtonTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="OK"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/getCurrentButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:text="GET CURRENT TIME"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/hourNumberPicker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
