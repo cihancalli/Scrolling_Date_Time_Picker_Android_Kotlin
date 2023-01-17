@@ -1,82 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/reminderTime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Select Time"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/amNumberPicker"
-        app:layout_constraintStart_toStartOf="@+id/hourNumberPicker"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.MainActivity">
 
-    <NumberPicker
-        android:id="@+id/hourNumberPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminderTime" />
 
-    <NumberPicker
-        android:id="@+id/minNumberPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/hourNumberPicker"
-        app:layout_constraintStart_toEndOf="@+id/hourNumberPicker"
-        app:layout_constraintTop_toTopOf="@+id/hourNumberPicker" />
-
-    <NumberPicker
-        android:id="@+id/amNumberPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/minNumberPicker"
-        app:layout_constraintStart_toEndOf="@+id/minNumberPicker"
-        app:layout_constraintTop_toTopOf="@+id/minNumberPicker" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="@+id/hourNumberPicker"
-        app:layout_constraintStart_toEndOf="@+id/amNumberPicker"
-        app:layout_constraintTop_toTopOf="@+id/reminderTime" />
-
-    <TextView
-        android:id="@+id/okButtonTextView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:text="OK"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <Button
-        android:id="@+id/getCurrentButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:text="GET CURRENT TIME"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourNumberPicker" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:navGraph="@navigation/main_nav" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
